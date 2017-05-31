@@ -1,4 +1,5 @@
 var http = require('http');
+var app = require('express')();
 
 var server = http.createServer(function(request, response) {
 
@@ -6,6 +7,10 @@ var server = http.createServer(function(request, response) {
     response.end("Hello Azure!");
 
 });
+
+app.get('/greeting', function (req, res) {
+       res.end( 'Hello ' + req.query.name + ' welcome to my Test website');
+})
 
 var port = process.env.PORT || 1337;
 server.listen(port);
