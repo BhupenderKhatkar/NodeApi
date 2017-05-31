@@ -8,8 +8,8 @@ var server = http.createServer(function(request, response) {
 
 });
 
-app.get('/greeting', function (req, res) {
-       res.end( 'Hello ' + req.query.name + ' welcome to my Test website');
+app.get('/greeting', function (request, response) {
+       request.end( 'Hello ' + request.query.name + ' welcome to my Test website');
 })
 
 var port = process.env.PORT || 1337;
